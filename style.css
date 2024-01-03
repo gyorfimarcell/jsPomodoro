@@ -1,0 +1,98 @@
+:root {
+    --background-color: #BF3131;
+    --foreground-color: #F3EDC8;
+    --primary-color: #EAD196;
+    --secondary-color: #7D0A0A;
+    --shadow: 0px 4px 5px var(--secondary-color);
+}
+
+body {
+    box-sizing: border-box;
+    margin: 0;
+    height: 100vh;
+
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: var(--background-color);
+    color: var(--foreground-color);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#circle {
+    width: 200px;
+    height: 200px;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    border: 5px solid var(--foreground-color);
+    border-radius: 50%;
+
+    box-shadow: var(--shadow), 0px 4px 5px var(--secondary-color) inset;
+}
+
+#stick {
+    width: 10px;
+    height: 30px;
+
+    position: absolute;
+    top: 0;
+    translate: 0 -16px;
+
+    background-color: var(--foreground-color);
+    border-radius: 10px;
+    box-shadow: var(--shadow);
+}
+
+#marker {
+    height: 110px;
+    position: absolute;
+    bottom: 50%;
+    left: calc(50% - 9px);
+
+    transform-origin: bottom center;
+    rotate: 0deg;
+    transition: rotate 1s linear;
+
+    display: flex;
+    align-items: start;
+}
+
+#dot {
+    width: 10px;
+    height: 10px;
+
+    background-color: var(--secondary-color);
+    border: 4px solid var(--foreground-color);
+    border-radius: 50%;
+}
+
+#time {
+    font-size: 1.5em;
+    text-shadow: var(--shadow);
+}
+
+#play-button {
+    height: 42px;
+
+    background: none;
+    border: none;
+
+    color: var(--foreground-color);
+    font-size: 2em;
+    text-shadow: var(--shadow);
+
+    transition: translate .1s ease-in-out;
+}
+
+#play-button:hover {
+    color: var(--primary-color);
+    cursor: pointer;
+    translate: 0 2px;
+}
